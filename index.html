@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./scripts/notification.js"></script>
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/backendless.js"></script>
+    <script src="./scripts/services/movie-service.js"></script>
+
+    <title>Movies</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="content-container">
+            <div class="header__logo header__logo--backend">
+                <img src="./assets/icons/noun_back end_133744.svg" alt="back-end-icon">
+            </div>
+            <nav class="nav">
+                <ul class="nav__list row row--right-aligned">
+                    <li class="nav__list-item"><a href="#" class="nav__list-link" id="home">Home</a></li>
+                    <li class="nav__list-item"><a href="#" class="nav__list-link" id="movies">Movies</a></li>
+                    <li class="nav__list-item"><a href="#" class="nav__list-link" id="create">Create Movie</a></li>
+                </ul>
+            </nav>
+            <div class="header__logo header__logo--frontend">
+                <img src="./assets/icons/noun_front end_133743.svg" alt="front-end-icon">
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="main__home" id="homeSection">
+            <div class="content-container">
+                <img class="main__home-background" src="./assets/images/erik-witsoe-GF8VvBgcJ4o-unsplash.png"
+                    alt="Photo by Erik Witsoe on Unsplash">
+            </div>
+        </section>
+
+        <section class="main__movies hidden" id="moviesSection">
+            <div class="content-container">
+                <h2 class="main__title page-title">All Movies</h2>
+
+                <div class="main__info">
+                    <form class="form form--search">
+                        <div class="form__line">
+                            <label>Input year:</label>
+                            <input type="text" name="search" id="searchInp">
+                            <input type="button" class="btn" id="searchBtn" value="Search" />
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="main__create hidden" id="createSection">
+            <div class="content-container">
+                <h2 class="main__title page-title">Create Movie</h2>
+
+                <form class="form">
+                    <div class="form__group">
+                        <label>Title</label>
+                        <input type="text" name="title" id="titleInp">
+                    </div>
+                    <div class="form__group">
+                        <label>Image Url</label>
+                        <input type="text" name="imageUrl" id="imageInp">
+                    </div>
+                    <div class="form__group">
+                        <label>Description</label>
+                        <textarea type="text" name="description" id="descriptionInp"></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label>Genres</label>
+                        <input type="text" name="genres" id="genresInp">
+                    </div>
+                    <div class="form__group">
+                        <label>Casting</label>
+                        <input type="text" name="starring" id="starringInp">
+                    </div>
+                    <div class="form__group">
+                        <label>Year</label>
+                        <input type="number" name="year" id="yearInp"  min="1800" max="2020">
+                    </div>
+                    <div class="form__group">
+                        <label>Rating</label>
+                        <input type="number" name="rating" id="ratingInp" min="0" max="10">
+                    </div>
+                    <div class="form__row">
+                        <input type="button" class="btn" id="createBtn" value="Create">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="content-container">
+            <p>@Movies</p>
+        </div>
+    </footer>
+</body>
+
+<div id="notifications">
+    <div id="loadingBox" class="notification">
+        <span>Loading …</span>
+    </div>
+    <div id="infoBox" class="notification">
+        <span>Info</span>
+    </div>
+    <div id="errorBox" class="notification">
+        <span>Error</span>
+    </div>
+</div>
+
+<script>
+    const HomePageRouterComponent = new HomePageRouter();
+    HomePageRouterComponent.init();
+</script>
+
+</html>

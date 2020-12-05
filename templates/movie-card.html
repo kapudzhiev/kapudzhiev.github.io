@@ -1,0 +1,30 @@
+<article class="movie">
+    <div class="movie__header">
+        <h3 class="movie__header-title">{{title}}</h3>
+        <div class="movie__header-img">
+            <img src={{imageUrl}}>
+        </div>
+    </div>
+    <div class="movie__info">
+        <div class="movie__info-genres">
+            <span class="h4-like-title">Genres:</span> {{genres}}
+        </div>
+        <div class="movie__info-starring">
+            <span class="h4-like-title">Cast:</span> {{starring}}
+        </div>
+        <div class="movie__info-description">
+            <span class="h4-like-title">Description:</span> {{description}}
+        </div>
+    </div>
+
+    <div class="movie__footer row row--space-btw">
+        <span>
+            <i class="fas fa-rocket"></i>
+            {{year}}
+        </span>
+        <span>
+            <i class="fas fa-star-half-alt"></i>
+            {{rating}}
+        </span>
+    </div>
+</article>
